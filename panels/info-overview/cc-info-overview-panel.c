@@ -869,6 +869,9 @@ cc_info_panel_row_activated_cb (CcInfoOverviewPanel *self,
 static void
 setup_os_logo (CcInfoOverviewPanel *panel)
 {
+#ifdef DISTRIBUTOR_LOGO
+  gtk_image_set_from_file (panel->os_logo, DISTRIBUTOR_LOGO);
+#else
   g_autofree char *logo_name = g_get_os_info ("LOGO");
   if (logo_name != NULL)
     {
@@ -879,6 +882,7 @@ setup_os_logo (CcInfoOverviewPanel *panel)
     {
       gtk_image_set_from_resource (panel->os_logo, "/org/gnome/control-center/info-overview/GnomeLogoVerticalMedium.svg");
     }
+#endif
 }
 
 static void
