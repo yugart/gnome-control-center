@@ -903,7 +903,7 @@ setup_os_logo (CcInfoOverviewPanel *panel)
   if (logo_name != NULL)
     {
       gtk_image_set_from_icon_name (panel->os_logo, logo_name, GTK_ICON_SIZE_INVALID);
-      gtk_image_set_pixel_size (panel->os_logo, 256);
+      gtk_image_set_pixel_size (panel->os_logo, 128);
     }
   else
     {
